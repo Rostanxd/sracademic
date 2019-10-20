@@ -1,0 +1,193 @@
+:root {
+    --verde-oscuro: linear-gradient(to bottom, #037529, #008a2e);
+    --color-font-nav: #ffffff;
+    --form-back-login: #f5f5f5;
+    --color-font-menu: black;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+h4 {
+    font-size: 16px;
+    margin: 0;
+    font-weight: bold;
+}
+
+h3 {
+    font-size: 20px;
+    line-height: 20px;
+    font-weight: bold;
+}
+
+.container-fluid {
+    padding: 0 20px 0 20px !important;
+}
+
+.navbar {
+    background-image: var(--verde-oscuro);
+    color: var(--color-font-nav);
+    padding: 0;
+}
+
+.navbar-bar {
+    list-style: none !important;
+}
+
+.title-nav {
+    font-size: 16px;
+    padding: 10px 15px 10px 15px !important;
+    color: var(--color-font-nav);
+    outline: 0;
+}
+
+.title-nav:hover {
+    color: var(--color-font-nav);
+
+}
+
+.sub-title-nav {
+    font-size: 20px;
+    color: var(--color-font-nav);
+}
+
+.background-page {
+    position: fixed;
+    background: url('../img/aok/bg2.jpg') no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.log {
+
+    background-color: var(--form-back-login);
+    padding: 19px 19px 19px 19px;
+    border: 1px solid #e3e3e3;
+    border-radius: 2%;
+    width: 100%;
+
+}
+
+.content {
+    padding-top: 80px;
+    padding-bottom: 80px;
+    background: none;
+}
+
+.icon {
+    width: 130px;
+    float: left;
+    height: 160px;
+    background: #fafafa;
+    margin-right: 10px;
+    margin-bottom: 10px;
+    position: relative;
+    border-radius: 3px;
+    color: black;
+}
+
+.icon:hover {
+    background: #999;
+    color: white;
+    cursor: pointer;
+}
+
+.img-menu {
+    width: 100px;
+    float: center;
+    height: 90px;
+}
+
+.icon-img {
+    width: 100%;
+    text-align: center;
+    height: 80px;
+}
+
+.icon-name {
+    font-weight: bold;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    text-align: center;
+    font-size: 14px;
+    line-height: 10px;
+}
+
+.icon-desc {
+    font-weight: normal;
+    font-size: 10px;
+    line-height: 10px;
+}
+
+.form-m {
+    width: 950px;
+    min-height: 100px;
+    margin: 25px auto;
+}
+
+.bread {
+    margin: 0;
+    padding: 8px;
+}
+
+.flex-row>.col>nav {
+    padding: 0 15px 0 15px;
+}
+
+.footer {
+    background-image: var(--verde-oscuro);
+    padding-top: 10px !important;
+    padding-bottom: 10px !important;
+}
+
+.title-footer {
+    font-size: 10px;
+    color: var(--color-font-nav);
+}
+
+.sub-title-footer {
+    font-size: 10px;
+    color: var(--color-font-nav);
+}
+
+th {
+    font-size: 12px;
+}
+
+td {
+    font-size: 12px;
+}
+
+.btn {
+    font-size: 12px !important;
+}
+
+.breadcrumb-item {
+    font-size: 12px;
+}
+
+.vertical-divider {
+    border-left: 2px solid white;
+    height: 20px;
+}
+
+.nav > li > a {
+    color: var(--color-font-nav) !important;
+    font-size: 12px;
+    padding:0 10px 0 10px;
+
+}
+
+.form-profesores{
+    padding-right: 40px;
+    padding-left: 40px; 
+}
+.card-table{
+    padding:0 ;
+}
