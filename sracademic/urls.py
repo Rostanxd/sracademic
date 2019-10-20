@@ -13,12 +13,13 @@ Including another URLconfstatic/
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
+from django.conf.urls import url, include
 from django.contrib import admin
-from django.contrib.auth.views import login 
+from django.contrib.auth.views import login, logout, logout_then_login
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^login/', login, {'template_name': 'security/login.html'}, name='login')
-   
+    url(r'^login/', login, {'template_name': 'security/login.html'}, name='login'),
+    url(r'^logout/', logout, logout, name = 'logout'),
+    url(r'^academic/', include('academic.urls'))
 ]

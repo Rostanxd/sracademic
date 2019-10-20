@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 
@@ -23,8 +24,8 @@
         <div class="container-fluid ">
             <ul class="navbar-nav">
                 <li class="nav-item  active">
-                    <a class="title-nav nav-link" href="{% url 'security:menu' %}">
-                        <img src="../../static/img/aok/logo.png" alt="">
+                    <a class="title-nav nav-link" href="">
+                        <img src="{% static 'img/aok/logo.png' %} " alt="">
 
                         <span class=" sub-title-nav">| SGA | </span>
                         Gestión Académica
@@ -54,11 +55,11 @@
                         </div>
                     </li>
                     <li class="nav-item">
-                        <a class="" href="{% url 'security:logout' %}" "><span
+                        <a class="" href="" "><span
                                         class=" fa fa-power-off fa-2x"></span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="" href="{% url 'security:logout' %}"><span class="fa fa-lock fa-2x"></span></a>
+                        <a class="" href=""><span class="fa fa-lock fa-2x"></span></a>
                     </li>
                 </ul>
 
@@ -68,66 +69,688 @@
     </nav>
 
     <div class="content">
-        <div class="container-fluid">
+        <div class="container-fluid table-responsive">
 
             <div class="flex-row">
                 <div class="col">
                     <nav class="  breadcrumb d-flex justify-content-between align-items-center" aria-label="breadcrumb">
                         <ol class="bread breadcrumb">
-                            <li class="breadcrumb-item"><a href="{% url 'security:menu' %}">Home</a></li>
-                            <li class="breadcrumb-item"><a href="{% url 'security:nivel' %}">Nivel</a></li>
-                            <li class="breadcrumb-item"><a href="{% url 'security:materias' %}">Materia</a></li>
-                            <li class="breadcrumb-item"><a href="{% url 'security:profesores' %}">Profesores</a></li>
+                            <li class="breadcrumb-item"><a href="">Home</a></li>
+                            <li class="breadcrumb-item"><a href="">Nivel</a></li>
+                            <li class="breadcrumb-item"><a href="">Materia</a></li>
+                            <li class="breadcrumb-item"><a href="">Profesores</a></li>
                         </ol>
-                        <a class="pull-right btn btn-sm btn-success text-right" href="{% url 'security:menu' %}"
-                            style="float: right;"><span class="fa fa-arrow-left"></span>Atras</a>
+                        <a class="pull-right btn btn-sm btn-success text-right" href="" style="float: right;"><span
+                                class="fa fa-arrow-left"></span>Atras</a>
                     </nav>
                 </div>
             </div>
+
             <div class="flex-row">
                 <div class="col">
                     <div class="maincontent">
-                        <div class="flex-row">
-                            <div class="col">
-                                <a href="{% url 'security:nivel' %}">
+
+                        <a href="">
+                            <div class="icon" url="">
+                                <div class="icon-img">
+                                    <div class="pd">
+                                        <img class="img-menu" src="../../static/img/iconos/actcomplementarias.png"
+                                            alt="">
+                                    </div>
+                                </div>
+                                <div class="icon-name">
+                                    <div class="pd">
+                                        <h4 class="title-icon">Actividades Complementarias</h4>
+                                    </div>
+                                    <span class="icon-desc">Asistencia a clases</span>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="maincontent">
+
+                        <a href="">
+                            <div class="icon" url="">
+                                <div class="icon-img">
+                                    <div class="pd">
+                                        <img class="img-menu" src="../../static/img/aok/distributivo.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="icon-name">
+                                    <div class="pd">
+                                        <h4 class="title-icon">Distributivo Docentes</h4>
+                                    </div>
+                                    <span class="icon-desc">Asignacion de docentes</span>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="maincontent">
+
+                        <a href="">
+                            <div class="icon" url="">
+                                <div class="icon-img">
+                                    <div class="pd">
+                                        <img class="img-menu" src="../../static/img/iconos/aulasdeclase.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="icon-name">
+                                    <div class="pd">
+                                        <h4 class="title-icon">Aydantia de Catedra</h4>
+                                    </div>
+                                    <span class="icon-desc">Registro de solicitud y gesetion de las actividades de
+                                        ayudantia</span>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="maincontent">
+
+                        <a href="">
+                            <div class="icon" url="">
+                                <div class="icon-img">
+                                    <div class="pd">
+                                        <img class="img-menu" src="../../static/img/iconos/asistencias.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="icon-name">
+                                    <div class="pd">
+                                        <h4 class="title-icon">Asistencia</h4>
+                                    </div>
+                                    <span class="icon-desc">Asistencia a clases</span>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="maincontent">
+
+                        <a href="">
+                            <div class="icon" url="">
+                                <div class="icon-img">
+                                    <div class="pd">
+                                        <img class="img-menu" src="../../static/img/iconos/aularvirtual.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="icon-name">
+                                    <div class="pd">
+                                        <h4 class="title-icon">Aula Virtual</h4>
+                                    </div>
+                                    <span class="icon-desc">Gestion de la asignatura, tareas documentos, calificaciones,
+                                        tutorias</span>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="maincontent">
+
+                        <a href="">
+                            <div class="icon" url="">
+                                <div class="icon-img">
+                                    <div class="pd">
+                                        <img class="img-menu" src="../../static/img/iconos/becaasignada.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="icon-name">
+                                    <div class="pd">
+                                        <h4 class="title-icon">Beca <br> Estudiantil</h4>
+                                    </div>
+                                    <span class="icon-desc">Detalles de la asginacion</span>
+
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="maincontent">
+                       
+                                <a href="">
                                     <div class="icon" url="">
                                         <div class="icon-img">
                                             <div class="pd">
-                                                <img class="img-menu" src="../../static/img/aok/distributivo.png"
+                                                <img class="img-menu" src="../../static/img/iconos/aulasdeclase.png"
                                                     alt="">
                                             </div>
                                         </div>
                                         <div class="icon-name">
                                             <div class="pd">
-                                                <h4 class="title-icon">Distributivo Docentes</h4>
+                                                <h4 class="title-icon">Evaluacion Docentes</h4>
                                             </div>
-                                            <span class="icon-desc">Asignacion de docentes</span>
+                                            <span class="icon-desc">Evaluacion del alumno a sus docentes</span>
                                         </div>
                                     </div>
                                 </a>
-                            </div>
-                        </div>
+                           
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="maincontent">
+                        
+                                <a href="">
+                                    <div class="icon" url="">
+                                        <div class="icon-img">
+                                            <div class="pd">
+                                                <img class="img-menu" src="../../static/img/iconos/reportes.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="icon-name">
+                                            <div class="pd">
+                                                <h4 class="title-icon">Certificados</h4>
+                                            </div>
+                                            <span class="icon-desc">Matricula, asistencia, malla, costo de carrera,
+                                                etc</span>
+                                        </div>
+                                    </div>
+                                </a>
+                           
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="maincontent">
+                       
+                                <a href="">
+                                    <div class="icon" url="">
+                                        <div class="icon-img">
+                                            <div class="pd">
+                                                <img class="img-menu" src="../../static/img/iconos/convenios.png"
+                                                    alt="">
+                                            </div>
+                                        </div>
+                                        <div class="icon-name">
+                                            <div class="pd">
+                                                <h4 class="title-icon">Convenios</h4>
+                                            </div>
+                                            <span class="icon-desc">Registro y control de los convenios de
+                                                empresas</span>
+                                        </div>
+                                    </div>
+                                </a>
+                           
                     </div>
 
                 </div>
             </div>
-            <footer class="footer container-fluid fixed-bottom">
-                <div class="flex-row">
-                    <div class="col">
-                        <div class="title-footer">
-                            Sistema de Gestión Académica, Universidad Estatal de Milagro
-                        </div>
-                        <div class="sub-title-footer">
-                            Todos los derechos reservados(c) 2012
-                            <span>, Acceso al sistema desde -192.168.1.102</span>
-                            - sga.unemi.edu.ec - SWEB-7
-                        </div>
-                    </div>
-                    <div class="col">
+
+            <div class="flex-row">
+                <div class="col">
+                    <div class="maincontent">
+
+                        <a href="">
+                            <div class="icon" url="">
+                                <div class="icon-img">
+                                    <div class="pd">
+                                        <img class="img-menu" src="../../static/img/iconos/alu_medical.png"
+                                            alt="">
+                                    </div>
+                                </div>
+                                <div class="icon-name">
+                                    <div class="pd">
+                                        <h4 class="title-icon">Ficha Medica</h4>
+                                    </div>
+                                    <span class="icon-desc">Datos personales y familiares medicos</span>
+                                </div>
+                            </div>
+                        </a>
 
                     </div>
+
                 </div>
-            </footer>
+                <div class="col">
+                    <div class="maincontent">
+
+                        <a href="">
+                            <div class="icon" url="">
+                                <div class="icon-img">
+                                    <div class="pd">
+                                        <img class="img-menu" src="../../static/img/iconos/hojavida.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="icon-name">
+                                    <div class="pd">
+                                        <h4 class="title-icon">Ficha Situacional</h4>
+                                    </div>
+                                    <span class="icon-desc">Estado socio-economico, ubicacion, discapacidad</span>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="maincontent">
+
+                        <a href="">
+                            <div class="icon" url="">
+                                <div class="icon-img">
+                                    <div class="pd">
+                                        <img class="img-menu" src="../../static/img/iconos/hojadevida.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="icon-name">
+                                    <div class="pd">
+                                        <h4 class="title-icon">Hoja de vida</h4>
+                                    </div>
+                                    <span class="icon-desc">Actualizar datos personales</span>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="maincontent">
+
+                        <a href="">
+                            <div class="icon" url="">
+                                <div class="icon-img">
+                                    <div class="pd">
+                                        <img class="img-menu" src="../../static/img/iconos/certificate.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="icon-name">
+                                    <div class="pd">
+                                        <h4 class="title-icon">Inscripcion <br> Titulacion</h4>
+                                    </div>
+                                    <span class="icon-desc">Seleccionar alternativa de titulacion</span>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="maincontent">
+
+                        <a href="">
+                            <div class="icon" url="">
+                                <div class="icon-img">
+                                    <div class="pd">
+                                        <img class="img-menu" src="../../static/img/iconos/cronograma.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="icon-name">
+                                    <div class="pd">
+                                        <h4 class="title-icon">Mi cronograma</h4>
+                                    </div>
+                                    <span class="icon-desc">Cronograma de mis materias y profesores</span>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="maincontent">
+
+                        <a href="">
+                            <div class="icon" url="">
+                                <div class="icon-img">
+                                    <div class="pd">
+                                        <img class="img-menu" src="../../static/img/iconos/alu_malla.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="icon-name">
+                                    <div class="pd">
+                                        <h4 class="title-icon">Mi Malla</h4>
+                                    </div>
+                                    <span class="icon-desc">Ver mi cumplimiento de malla</span>
+
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="maincontent">
+                       
+                                <a href="">
+                                    <div class="icon" url="">
+                                        <div class="icon-img">
+                                            <div class="pd">
+                                                <img class="img-menu" src="../../static/img/iconos/citamedica.png"
+                                                    alt="">
+                                            </div>
+                                        </div>
+                                        <div class="icon-name">
+                                            <div class="pd">
+                                                <h4 class="title-icon">Mis Citas Medicas</h4>
+                                            </div>
+                                            <span class="icon-desc">Odontologica, Medica y Psicologica</span>
+                                        </div>
+                                    </div>
+                                </a>
+                           
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="maincontent">
+                        
+                                <a href="">
+                                    <div class="icon" url="">
+                                        <div class="icon-img">
+                                            <div class="pd">
+                                                <img class="img-menu" src="../../static/img/iconos/my_payment.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="icon-name">
+                                            <div class="pd">
+                                                <h4 class="title-icon">Mis Finanzas</h4>
+                                            </div>
+                                            <span class="icon-desc">Mis pagos y facturas de rubros</span>
+                                        </div>
+                                    </div>
+                                </a>
+                           
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="maincontent">
+                       
+                                <a href="">
+                                    <div class="icon" url="">
+                                        <div class="icon-img">
+                                            <div class="pd">
+                                                <img class="img-menu" src="../../static/img/iconos/reloj.png"
+                                                    alt="">
+                                            </div>
+                                        </div>
+                                        <div class="icon-name">
+                                            <div class="pd">
+                                                <h4 class="title-icon">Mis Horarios</h4>
+                                            </div>
+                                            <span class="icon-desc">Ver mis horarios  de clases programados para periodo</span>
+                                        </div>
+                                    </div>
+                                </a>
+                           
+                    </div>
+
+                </div>
+            </div>
+
+            <div class="flex-row">
+                <div class="col">
+                    <div class="maincontent">
+
+                        <a href="">
+                            <div class="icon" url="">
+                                <div class="icon-img">
+                                    <div class="pd">
+                                        <img class="img-menu" src="../../static/img/iconos/mismaterias.png"
+                                            alt="">
+                                    </div>
+                                </div>
+                                <div class="icon-name">
+                                    <div class="pd">
+                                        <h4 class="title-icon">Mis Materias</h4>
+                                    </div>
+                                    <span class="icon-desc">Notas y asistencia  en el periodo lectivo</span>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="maincontent">
+
+                        <a href="">
+                            <div class="icon" url="">
+                                <div class="icon-img">
+                                    <div class="pd">
+                                        <img class="img-menu" src="../../static/img/iconos/practicas.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="icon-name">
+                                    <div class="pd">
+                                        <h4 class="title-icon">Mis Practicas PreProfesionales</h4>
+                                    </div>
+                                    <span class="icon-desc">Registro de horas y empresas</span>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="maincontent">
+
+                        <a href="">
+                            <div class="icon" url="">
+                                <div class="icon-img">
+                                    <div class="pd">
+                                        <img class="img-menu" src="../../static/img/iconos/mundocrai.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="icon-name">
+                                    <div class="pd">
+                                        <h4 class="title-icon">Mundo CRAI</h4>
+                                    </div>
+                                    <span class="icon-desc">Bienvenidos</span>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="maincontent">
+
+                        <a href="">
+                            <div class="icon" url="">
+                                <div class="icon-img">
+                                    <div class="pd">
+                                        <img class="img-menu" src="../../static/img/iconos/examen.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="icon-name">
+                                    <div class="pd">
+                                        <h4 class="title-icon">Pre-Inscripcion</h4>
+                                    </div>
+                                    <span class="icon-desc">Registro de solicitud para test de suficiencia, modulos remediales</span>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="maincontent">
+
+                        <a href="">
+                            <div class="icon" url="">
+                                <div class="icon-img">
+                                    <div class="pd">
+                                        <img class="img-menu" src="../../static/img/iconos/examen.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="icon-name">
+                                    <div class="pd">
+                                        <h4 class="title-icon">Pre-inscripcion <br> de practicas</h4>
+                                    </div>
+                                    <span class="icon-desc">Pre-inscripcion de practicas preprofesionales</span>
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="maincontent">
+
+                        <a href="">
+                            <div class="icon" url="">
+                                <div class="icon-img">
+                                    <div class="pd">
+                                        <img class="img-menu" src="../../static/img/iconos/titulacion.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="icon-name">
+                                    <div class="pd">
+                                        <h4 class="title-icon">Proceso de Titutlacicon</h4>
+                                    </div>
+                                    <span class="icon-desc">Titulacion</span>
+
+                                </div>
+                            </div>
+                        </a>
+
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="maincontent">
+                       
+                                <a href="">
+                                    <div class="icon" url="">
+                                        <div class="icon-img">
+                                            <div class="pd">
+                                                <img class="img-menu" src="../../static/img/iconos/proyecto_vinculacion.png"
+                                                    alt="">
+                                            </div>
+                                        </div>
+                                        <div class="icon-name">
+                                            <div class="pd">
+                                                <h4 class="title-icon">Proyectos de Vinculacion</h4>
+                                            </div>
+                                            <span class="icon-desc">Proyectos de vinculacion</span>
+                                        </div>
+                                    </div>
+                                </a>
+                           
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="maincontent">
+                        
+                                <a href="">
+                                    <div class="icon" url="">
+                                        <div class="icon-img">
+                                            <div class="pd">
+                                                <img class="img-menu" src="../../static/img/iconos/trofeo.png" alt="">
+                                            </div>
+                                        </div>
+                                        <div class="icon-name">
+                                            <div class="pd">
+                                                <h4 class="title-icon">Record Academico</h4>
+                                            </div>
+                                            <span class="icon-desc">Notas obtenidas en la carrera</span>
+                                        </div>
+                                    </div>
+                                </a>
+                           
+                    </div>
+
+                </div>
+                <div class="col">
+                    <div class="maincontent">
+                       
+                                <a href="">
+                                    <div class="icon" url="">
+                                        <div class="icon-img">
+                                            <div class="pd">
+                                                <img class="img-menu" src="../../static/img/iconos/titulacion.png"
+                                                    alt="">
+                                            </div>
+                                        </div>
+                                        <div class="icon-name">
+                                            <div class="pd">
+                                                <h4 class="title-icon">Seguimiento a Graduados</h4>
+                                            </div>
+                                            <span class="icon-desc">Sistema de Seguimiento y Acompañamiento a Graduados</span>
+                                        </div>
+                                    </div>
+                                </a>
+                           
+                    </div>
+
+                </div>
+            </div>
+            <div class="flex-row">
+                <div class="col">
+                    <div class="maincontent">
+                       
+                                <a href="">
+                                    <div class="icon" url="">
+                                        <div class="icon-img">
+                                            <div class="pd">
+                                                <img class="img-menu" src="../../static/img/iconos/alu_ofertas.png"
+                                                    alt="">
+                                            </div>
+                                        </div>
+                                        <div class="icon-name">
+                                            <div class="pd">
+                                                <h4 class="title-icon">Unemi empleo</h4>
+                                            </div>
+                                            <span class="icon-desc">Revision de ofertas laborales y Postulacion</span>
+                                        </div>
+                                    </div>
+                                </a>
+                           
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <footer class="footer  fixed-bottom">
+        <div class="flex-row">
+            <div class="col">
+                <div class="title-footer">
+                    Sistema de Gestión Académica, Universidad Estatal de Milagro
+                </div>
+                <div class="sub-title-footer">
+                    Todos los derechos reservados(c) 2012
+                    <span>, Acceso al sistema desde -192.168.1.102</span>
+                    - sga.unemi.edu.ec - SWEB-7
+                </div>
+            </div>
+            <div class="col">
+
+            </div>
+        </div>
+    </footer>
 
 </body>
 
