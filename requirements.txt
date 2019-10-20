@@ -24,7 +24,7 @@ scikit-surprise==1.0.6
 scipy==1.0.0
 six==1.10.0
 Unidecode==0.4.21
-Werkzeug==0.13
+Werkzeug==0.15.3
 django-filter==1.0.4
 django-material==1.2.5
 django-viewflow==1.0.2
