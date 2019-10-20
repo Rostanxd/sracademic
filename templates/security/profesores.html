@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- js -->
+    <script src="../../static/node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../../static/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!--  css -->
+    <link rel="stylesheet" href="../../static/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../static/css/style.css">
+    <link rel="stylesheet" href="../../static/node_modules/font-awesome/css/font-awesome.min.css">
+
+    <title>Profesores</title>
+</head>
+
+<body>
+        <nav class='navbar fixed-top'>
+                <div class="container-fluid ">
+                    <ul class="navbar-nav">
+                        <li class="nav-item  active">
+                            <a class="title-nav nav-link" href="{% url 'security:menu' %}">
+                                <img src="../../static/img/aok/logo.png" alt="">
+        
+                                <span class=" sub-title-nav">| SGA | </span>
+                                Gestión Académica
+                            </a>
+                        </li>
+                    </ul>
+        
+                    <div class="pull-right">
+        
+                        <ul class="nav justify-content-between align-items-center">
+                            <li class=" d-none d-lg-block nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                    aria-haspopup="true" aria-expanded="false">Admin</a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="#"><i class="fa fa-check"></i>Admin</a>
+        
+                                </div>
+                            </li>
+                            <li class=" d-none d-lg-block vertical-divider"></li>
+                            <li class="d-none d-lg-block nav-item dropdown">
+                                <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                                    aria-haspopup="true" aria-expanded="false">REGULAR MAYO A SEPTIEMBRE 2019 V2 </a>
+                                <div class="dropdown-menu dropdown-menu-right">
+                                    <a class="dropdown-item" href="#"><i class="fa fa-check"></i>
+                                        REGULAR MAYO A SEPTIEMBRE 2019 V2 </a>
+        
+                                </div>
+                            </li>
+                            <li class="nav-item">
+                                <a class="" href="{% url 'security:logout' %}" "><span
+                                        class=" fa fa-power-off fa-2x"></span></a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="" href="{% url 'security:logout' %}"><span class="fa fa-lock fa-2x"></span></a>
+                            </li>
+                        </ul>
+        
+                    </div>
+                </div>
+        
+            </nav>
+        
+            <div class="content">
+                <div class="container-fluid">
+        
+                    <div class="flex-row">
+                        <div class="col">
+                            <nav class="  breadcrumb d-flex justify-content-between align-items-center" aria-label="breadcrumb">
+                                <ol class="bread breadcrumb">
+                                    <li class="breadcrumb-item"><a href="{% url 'security:menu' %}">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="{% url 'security:nivel' %}">Nivel</a></li>
+                                    <li class="breadcrumb-item"><a href="{% url 'security:materias' %}">Materia</a></li>
+                                    <li class="breadcrumb-item"><a href="{% url 'security:profesores' %}">Profesores</a></li>
+                                </ol>
+                                <a class="pull-right btn btn-sm btn-success text-right" href="{% url 'security:menu' %}"
+                                    style="float: right;"><span class="fa fa-arrow-left"></span>Atras</a>
+                            </nav>
+                        </div>
+                    </div>
+                    <div class="card form-m bg-light">
+                            <div class="card-body">
+                                <h3 class=" card-title ">BIOLOGIA GENERAL</h3>
+                                <form class=" form-profesores" action="">
+                                    <div class="form-group row">
+                                        <label class="col-md-2 col-form-label" for="exampleFormControlSelect1">Tipo</label>
+                    
+                                        <select class="col-md-10 form-control form-control-sm" id="exampleFormControlSelect1">
+                                            <option>------</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-2 col-form-label" for="exampleFormControlInput1">Segmento</label>
+                                        <input type="text" class="form-control form-control-sm col-md-2" id="exampleFormControlInput1"
+                                            placeholder="">
+                                        <div class="col-md-3"></div>
+                                        <label class="col-md-2 col-form-label" for="exampleFormControlInput1">Horas Semanal</label>
+                                        <input type="text" class="form-control form-control-sm col-md-2" id="exampleFormControlInput1"
+                                            placeholder="">
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-2 col-form-label" for="exampleFormControlInput1">Desde</label>
+                                        <input type="text" class="form-control form-control-sm col-md-2" id="exampleFormControlInput1"
+                                            placeholder="">
+                                        <div class="col-md-3"></div>
+                                        <label class="col-md-2 col-form-label" for="exampleFormControlInput1">Hasta</label>
+                                        <input type="text" class="form-control form-control-sm col-md-2" id="exampleFormControlInput1"
+                                            placeholder="">
+                                    </div>
+                                    <div class="form-group row">
+                                        <div class="col-sm-2">Principal</div>
+                                        <div class="col-sm-1">
+                                            <div class="form-check">
+                                                <input class="form-check-input" type="checkbox" id="gridCheck1">
+                                                <label class="form-check-label" for="gridCheck1">
+                    
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-4"></div>
+                                        <div class="col-sm-2">No validar horarios</div>
+                                        <div class="col-sm-1">
+                                            <div class="form-check">
+                                                <input class="form-check-input form-control-sm" type="checkbox" id="gridCheck1">
+                                                <label class="form-check-label form-control-sm" for="gridCheck1">
+                                                </label>
+                                            </div>
+                                        </div>
+                    
+                                    </div>
+                                    <div class="form-group row">
+                                        <label class="col-md-2 col-form-label" for="exampleFormControlSelect1">Tipo</label>
+                    
+                                        <select class="col-md-10 form-control form-control-sm" id="exampleFormControlSelect1">
+                                            <option>------</option>
+                                        </select>
+                                    </div>
+                                </form>
+                                <div class="card bg-light">
+                                    <div class="card-header">
+                                        <h3 class="text-center">DOCENTES QUE PREFIEREN LA ASIGNATURA</h3>
+                                    </div>
+                                    <div class="card-table card-body">
+                                        <div id="table-profesores">
+                                            <div class="row">
+                                                <div class="col">
+                                                    <table class="table table-bordered table-striped">
+                                                        <thead>
+                                                            <tr class="table-active">
+                                                                <th scope="col " style="width: 110px;"></th>
+                                                                <th scope="col" style="width: 250px;text-align: center;">Profesor</th>
+                                                                <th scope="col" style="width: 10px;text-align: center;">Titulacion</th>
+                                                                <th scope="col" style="width: 10px;text-align: center;">Investigacion</th>
+                                                                <th scope="col" style="width: 10px;text-align: center;">CV</th>
+                                                                <th scope="col" style="width: 20px;text-align: center;">Evaluacion</th>
+                                                                <th scope="col" style="width: 20px;text-align: center;">Horas</th>
+                    
+                                                            </tr>
+                                                        </thead>
+                                                        <tbody>
+                                                            <tr>
+                                                                <td class="">
+                                                                    <a class=" text-center btn btn-sm btn-success" href="">
+                                                                        <i class="fa fa-book fa-xs"></i>
+                                                                        Seleccionar
+                                                                    </a>
+                                                                </td>
+                                                                <td>Villamar Aveiga Monica del Rocio</td>
+                                                                <td style="text-align: center;"><a class="btn btn-sm btn-warning" href=""><i
+                                                                            class="fa fa-eye fa-xs"></i></a></td>
+                                                                <td style="text-align: center;"><a class="btn btn-sm btn-warning" href=""><i
+                                                                            class="fa fa-eye fa-xs"></i></a></td>
+                                                                <td style="text-align: center;"><a class="btn btn-sm btn-warning" href=""><i
+                                                                            class="fa fa-eye fa-xs"></i></a></td>
+                                                                <td style="text-align: center;"><a class="btn btn-sm btn-warning" href=""><i
+                                                                            class="fa fa-eye fa-xs"></i></a>
+                                                                </td>
+                                                                <td>20</td>
+                                                            </tr>
+                    
+                    
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+        
+                </div>
+        
+            </div>
+
+    <footer class="footer container-fluid fixed-bottom">
+            <div class="flex-row">
+                <div class="col">
+                    <div class="title-footer">
+                        Sistema de Gestión Académica, Universidad Estatal de Milagro
+                    </div>
+                    <div class="sub-title-footer">
+                        Todos los derechos reservados(c) 2012
+                        <span>, Acceso al sistema desde -192.168.1.102</span>
+                        - sga.unemi.edu.ec - SWEB-7
+                    </div>
+                </div>
+                <div class="col">
+    
+                </div>
+            </div>
+        </footer>
+   
+</body>
+
+</html>
+{% endblock main %}
