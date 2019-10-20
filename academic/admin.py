@@ -1,6 +1,21 @@
-# -*- coding: utf-8 -*-
-from __future__ import unicode_literals
-
-from django.contrib import admin
-
-# Register your models here.
+from django.contrib import  admin
+from academic.models import *
+admin.site.register(PeriodoAcademico)
+admin.site.register(Facultad)
+admin.site.register(Persona)
+admin.site.register(Docente)
+admin.site.register(Estudiante)
+admin.site.register(NivelAcademico)
+admin.site.register(AreaConocimiento)
+admin.site.register(SubAreaConocimiento)
+admin.site.register(SubAreaConocimientoEspecifico)
+admin.site.register(Materia)
+admin.site.register(Sesion)
+admin.site.register(Semestre)
+admin.site.register(Grado)
+admin.site.register(Titulacion)
+admin.site.register(Investigacion)
+admin.site.register(Paralelo)
+admin.site.register(Carrera)
+admin.site.register(Evaluacion)
+admin.site.register(Distributivo)
