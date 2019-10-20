@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="es">
 
@@ -6,13 +7,13 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- js -->
-    <script src="../../static/node_modules/jquery/dist/jquery.min.js"></script>
-    <script src="../../static/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src=" {% static 'node_modules/jquery/dist/jquery.min.js' %} "></script>
+    <script src=" {% static 'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js' %} "></script>
 
     <!--  css -->
-    <link rel="stylesheet" href="../../static/node_modules/bootstrap/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="../../static/css/style.css">
-    <link rel="stylesheet" href="../../static/node_modules/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href=" {% static 'node_modules/bootstrap/dist/css/bootstrap.min.css' %} ">
+    <link rel="stylesheet" href=" {% static 'css/style.css' %} ">
+    <link rel="stylesheet" href=" {% static 'node_modules/font-awesome/css/font-awesome.min.css' %} ">
 
     <title>Profesores</title>
 </head>
@@ -22,8 +23,8 @@
                 <div class="container-fluid ">
                     <ul class="navbar-nav">
                         <li class="nav-item  active">
-                            <a class="title-nav nav-link" href="{% url 'security:menu' %}">
-                                <img src="../../static/img/aok/logo.png" alt="">
+                            <a class="title-nav nav-link" href="">
+                                <img src="{% static 'img/aok/logo.png' %} " alt="">
         
                                 <span class=" sub-title-nav">| SGA | </span>
                                 Gestión Académica
@@ -53,11 +54,11 @@
                                 </div>
                             </li>
                             <li class="nav-item">
-                                <a class="" href="{% url 'security:logout' %}" "><span
+                                <a class="" href="" "><span
                                         class=" fa fa-power-off fa-2x"></span></a>
                             </li>
                             <li class="nav-item">
-                                <a class="" href="{% url 'security:logout' %}"><span class="fa fa-lock fa-2x"></span></a>
+                                <a class="" href=""><span class="fa fa-lock fa-2x"></span></a>
                             </li>
                         </ul>
         
@@ -73,12 +74,12 @@
                         <div class="col">
                             <nav class="  breadcrumb d-flex justify-content-between align-items-center" aria-label="breadcrumb">
                                 <ol class="bread breadcrumb">
-                                    <li class="breadcrumb-item"><a href="{% url 'security:menu' %}">Home</a></li>
-                                    <li class="breadcrumb-item"><a href="{% url 'security:nivel' %}">Nivel</a></li>
-                                    <li class="breadcrumb-item"><a href="{% url 'security:materias' %}">Materia</a></li>
-                                    <li class="breadcrumb-item"><a href="{% url 'security:profesores' %}">Profesores</a></li>
+                                    <li class="breadcrumb-item"><a href="">Home</a></li>
+                                    <li class="breadcrumb-item"><a href="">Nivel</a></li>
+                                    <li class="breadcrumb-item"><a href="">Materia</a></li>
+                                    <li class="breadcrumb-item"><a href="">Profesores</a></li>
                                 </ol>
-                                <a class="pull-right btn btn-sm btn-success text-right" href="{% url 'security:menu' %}"
+                                <a class="pull-right btn btn-sm btn-success text-right" href=""
                                     style="float: right;"><span class="fa fa-arrow-left"></span>Atras</a>
                             </nav>
                         </div>
@@ -219,4 +220,3 @@
 </body>
 
 </html>
-{% endblock main %}
