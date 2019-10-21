@@ -1,0 +1,212 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- js -->
+    <script src="{% static 'node_modules/jquery/dist/jquery.min.js' %} "></script>
+    <script src="{% static 'node_modules/bootstrap/dist/js/bootstrap.bundle.min.js' %} "></script>
+
+    <!--  css -->
+    <link rel="stylesheet" href="{% static 'node_modules/bootstrap/dist/css/bootstrap.min.css' %} ">
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'node_modules/font-awesome/css/font-awesome.min.css' %}">
+
+    <title>Inicio Sesion</title>
+</head>
+
+<body>
+<nav class='navbar fixed-top'>
+    <div class="container-fluid ">
+        <ul class="navbar-nav">
+            <li class="nav-item  active">
+                <a class="title-nav nav-link" href="">
+                    <img src="{% static 'img/aok/logo.png' %} " alt="">
+
+                    <span class=" sub-title-nav">| SGA | </span>
+                    Gestión Académica
+                </a>
+            </li>
+        </ul>
+
+        <div class="pull-right">
+
+            <ul class="nav justify-content-between align-items-center">
+                <li class=" d-none d-lg-block nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                       aria-haspopup="true" aria-expanded="false">Admin</a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="#"><i class="fa fa-check"></i>Admin</a>
+
+                    </div>
+                </li>
+                <li class=" d-none d-lg-block vertical-divider"></li>
+                <li class="d-none d-lg-block nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button"
+                       aria-haspopup="true" aria-expanded="false">REGULAR MAYO A SEPTIEMBRE 2019 V2 </a>
+                    <div class="dropdown-menu dropdown-menu-right">
+                        <a class="dropdown-item" href="#"><i class="fa fa-check"></i>
+                            REGULAR MAYO A SEPTIEMBRE 2019 V2 </a>
+                    </div>
+                </li>
+                <li class="nav-item">
+                    <a class="" href=""><span
+                            class=" fa fa-power-off fa-2x"></span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="" href=""><span class="fa fa-lock fa-2x"></span></a>
+                </li>
+            </ul>
+
+        </div>
+    </div>
+
+</nav>
+
+<div class="content">
+    <div class="container-fluid">
+
+        <div class="flex-row">
+            <div class="col">
+                <nav class="  breadcrumb d-flex justify-content-between align-items-center" aria-label="breadcrumb">
+                    <ol class="bread breadcrumb">
+                        <li class="breadcrumb-item"><a href="">Home</a></li>
+                        <li class="breadcrumb-item"><a href="">Nivel</a></li>
+                        <li class="breadcrumb-item"><a href="">Materia</a></li>
+                        <li class="breadcrumb-item"><a href="">Profesores</a></li>
+                    </ol>
+                    <a class="pull-right btn btn-sm btn-success text-right" href=""
+                       style="float: right;"><span class="fa fa-arrow-left"></span>Atras</a>
+                </nav>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="col">
+                <h4>
+                    Niveles Academicos
+                </h4>
+                <div class="btn-group" role="group">
+                    <button id="btn-reportes" type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Reportes
+                    </button>
+                    <div class="dropdown-menu">
+
+                    </div>
+                    <span class="caret"></span>
+                </div>
+                <div class="btn-group">
+                    <button id="btn-reportes" type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown"
+                            aria-haspopup="true" aria-expanded="false">Acciones
+                    </button>
+                    <div class="dropdown-menu">
+
+                    </div>
+                    <span class="caret"></span>
+                </div>
+            </div>
+            <div id="table-nivel">
+                <div class="flex-row">
+                    <div class="col">
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                            <tr class="table-active">
+                                <th scope="col" style="width: 20px;text-align: center;"><i class="fa fa-lock"></i></th>
+                                <th scope="col" style="width: 20px;text-align: center;"><i class="fa fa-user"></i></th>
+                                <th scope="col" style="width: 20px;text-align: center;"><i
+                                        class="fa fa-align-justify"></i>
+                                </th>
+                                <th scope="col" style="width: 300px;text-align: center;">Nivel</th>
+                                <th scope="col" style="width: 20px;text-align: center;">Matriculas</th>
+                                <th scope="col" style="width: 40px;text-align: center;"> Session/Modalidad</th>
+                                <th scope="col" style="width: 20px;text-align: center;">Inicio/Fin</th>
+                                <th scope="col" style="width: 20px;text-align: center;">Mat.Reg</th>
+                                <th scope="col" style="width: 20px;text-align: center;">Mat.Ext</th>
+                                <th scope="col" style="width: 20px;text-align: center;">Mat.Esp</th>
+                                <th scope="col" style="width: 200px;text-align: center;"></th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            {% for n in niveles %}
+                                <tr>
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                            <label class="form-check-label" for="defaultCheck1">
+
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                            <label class="form-check-label" for="defaultCheck1">
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+                                            <label class="form-check-label" for="defaultCheck1">
+                                            </label>
+                                        </div>
+                                    </td>
+                                    <td>{{ n.nombre }}</td>
+                                    <td>??</td>
+                                    <td>{{ n.sesion }} /
+                                        <br> {{ n.modalidad }}
+                                    </td>
+                                    <td>{{ n.fecha_inicio }}
+                                        <br>{{ n.fecha_fin }}
+                                    </td>
+                                    <td>
+                                        {{ n.fecha_matricula }}
+                                    </td>
+                                    <td>
+                                        {{ n.fecha_extraordinaria }}
+                                    </td>
+                                    <td>
+                                        {{ m.fecha_especial }}
+                                    </td>
+                                    <td>
+                                        <a class="btn btn-sm btn-success" href="{% url 'academic:materia' n.pk %}">
+                                            <i class="fa fa-book"></i>Materias
+                                        </a>
+                                    </td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+</div>
+
+
+<footer class="footer container-fluid fixed-bottom">
+    <div class="flex-row">
+        <div class="col">
+            <div class="title-footer">
+                Sistema de Gestión Académica, Universidad Estatal de Milagro
+            </div>
+            <div class="sub-title-footer">
+                Todos los derechos reservados(c) 2012
+                <span>, Acceso al sistema desde -192.168.1.102</span>
+                - sga.unemi.edu.ec - SWEB-7
+            </div>
+        </div>
+        <div class="col">
+
+        </div>
+    </div>
+</footer>
+</body>
+
+</html>

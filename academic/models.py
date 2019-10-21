@@ -265,7 +265,6 @@ class Materia(models.Model):
         ordering = ('nombre',)
 
 
-
 class Evaluacion(models.Model):
     estudiante = models.ForeignKey(Estudiante, on_delete=models.PROTECT)
     docente = models.ForeignKey(Docente, on_delete=models.PROTECT)
