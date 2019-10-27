@@ -10,7 +10,7 @@ from django.shortcuts import get_object_or_404, render, redirect
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_http_methods
 
-from .models import NivelAcademico, Materia
+from .models import NivelAcademico, Materia, Distributivo
 
 from rest_framework.parsers import JSONParser
 from rest_framework.renderers import JSONRenderer
@@ -65,7 +65,7 @@ def menu(request):
     return render(request, '../templates/security/menu.html', )
 
 
-def distributivo(request):
+def niveles_academicos(request):
     niveles = NivelAcademico.objects.all()
     niveles_arr = []
     for n in niveles:
@@ -77,23 +77,42 @@ def distributivo(request):
             'fecha_matricula': n.fechamatriculaordinaria,
             'fecha_especial': n.fechamatriculaespecial,
             'fecha_extraordinaria': n.fechamatriculaextraordinaria,
+            'id_sesion': n.sesion.id,
             'sesion': n.sesion.nombre,
+            'matriculas': n.matriculas,
             'modalidad': n.modalidad.nombre,
         })
-    print(niveles_arr)
-    return render(request, 'security/distributivo.html', context={'niveles': niveles_arr})
+    return render(request, 'security/niveles_academicos.html', context={'niveles': niveles_arr})
 
 
-def materia(request, pk):
+def nivel_academico_detalle(request, pk):
+    nivel_academico = get_object_or_404(NivelAcademico, pk=pk)
+    distributivos = Distributivo.objects.filter(sesion__exact=nivel_academico.sesion.id)
+    distributivos_arr = []
+    for d in distributivos:
+        distributivos_arr.append({
+            'pk': d.pk,
+            'materia': d.materia.nombre
+        })
+
+    return render(request,
+                  'security/nivel_academico_detalle.html',
+                  context={
+                      'nivel_academico': nivel_academico,
+                      'distributivos': distributivos_arr
+                  })
+
+
+def distributivo_detalle(request, pk):
     try:
-        materia = get_object_or_404(Materia, pk=pk)
-        return render(request, 'security/materia.html', context={'materia': materia})
+        distributivo = get_object_or_404(Distributivo, pk=pk)
+        return render(request, 'security/distributivo_detalle.html', context={'distributivo': distributivo})
     except Materia.DoesNotExist:
         raise Http404("No MyModel matches the given query.")
 
 
 def profesor(request):
-    return render(request, 'security/profesor.html', )
+    return render(request, 'security/distributivo_detalle.html', )
 
 
 #   Funciones de consultas
@@ -106,7 +125,8 @@ def get_niveles(request):
             'fecha_inicio': n.fechainicio,
             'fecha_fin': n.fechafin,
             'fecha_matricula': n.fechamatriculaordinaria,
-            'sesion': n.sesion.nombre
+            'sesion': n.sesion.nombre,
+            'matriculas': n.matriculas
         })
 
     return HttpResponse(JSONResponse(niveles_arr), content_type="application/json")

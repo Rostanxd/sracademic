@@ -15,16 +15,17 @@
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <link rel="stylesheet" href="{% static 'node_modules/font-awesome/css/font-awesome.min.css' %}">
 
-    <title>Inicio Sesion</title>
+    <title>Nivel Académico Detalle</title>
 </head>
 
 <body>
+
 <nav class='navbar fixed-top'>
     <div class="container-fluid ">
         <ul class="navbar-nav">
             <li class="nav-item  active">
                 <a class="title-nav nav-link" href="">
-                    <img src="{% static 'img/aok/logo.png' %} " alt="">
+                    <img src="{% static '/img/aok/logo.png' %}" alt="">
 
                     <span class=" sub-title-nav">| SGA | </span>
                     Gestión Académica
@@ -50,6 +51,7 @@
                     <div class="dropdown-menu dropdown-menu-right">
                         <a class="dropdown-item" href="#"><i class="fa fa-check"></i>
                             REGULAR MAYO A SEPTIEMBRE 2019 V2 </a>
+
                     </div>
                 </li>
                 <li class="nav-item">
@@ -84,10 +86,18 @@
             </div>
         </div>
         <div class="container-fluid">
-            <div class="col">
+            <div class="flex-row">
                 <h4>
-                    Niveles Academicos
+                    Materias del nivel Academico<br>
+                    Facultad Ciencias E INGENIERIA<br>
+                    {{nivel_academico.sesion.nombre}}<br>
+                    Fechas: {{nivel_academico.fechainicio}} - {{nivel_academico.fechafin}}
                 </h4>
+            </div>
+
+
+            <div class="flex-row">
+
                 <div class="btn-group" role="group">
                     <button id="btn-reportes" type="button" class="btn btn-light dropdown-toggle" data-toggle="dropdown"
                             aria-haspopup="true" aria-expanded="false">Reportes
@@ -107,73 +117,104 @@
                     <span class="caret"></span>
                 </div>
             </div>
-            <div id="table-nivel">
+            <form>
+                <div class="form-row">
+                    <div class="col-5">
+                        <div class="form-group">
+
+                            <select class="form-control form-control-sm" id="exampleFormControlSelect1">
+                                <option>Ambiental(Agosto 2017) PRESENCIAL 468862A-P-01-Total materias 12</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="form-group">
+
+                            <select class="form-control form-control-sm" id="exampleFormControlSelect1">
+                                <option>TODOS</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-2">
+                        <div class="form-group">
+
+                            <select class="form-control form-control-sm" id="exampleFormControlSelect1">
+                                <option>TODOS</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="col-1">
+                        <button type="submit" class="btn btn-warning mb-2">
+                            <i class="fa fa-list-ol fa-xs"></i>
+                            Horario
+                        </button>
+                    </div>
+                    <div class="col-2">
+                        <button type="submit" class="btn btn-warning mb-2">
+                            <i class="fa fa-list-ol fa-xs"></i>Horario Examen
+                        </button>
+                    </div>
+                </div>
+            </form>
+            <div class="input-group mb-3">
+                <div class="input-group-prepend">
+                </div>
+                <input type="text" class="form-control form-control-sm" aria-label="" aria-describedby="basic-addon1">
+            </div>
+
+
+            <div class="table">
                 <div class="flex-row">
                     <div class="col">
                         <table class="table table-bordered table-striped">
                             <thead>
                             <tr class="table-active">
-                                <th scope="col" style="width: 20px;text-align: center;"><i class="fa fa-lock"></i></th>
-                                <th scope="col" style="width: 20px;text-align: center;"><i class="fa fa-user"></i></th>
-                                <th scope="col" style="width: 20px;text-align: center;"><i
-                                        class="fa fa-align-justify"></i>
+                                <th scope="col" style="width: 200px;text-align: center;">Asignatura
                                 </th>
-                                <th scope="col" style="width: 300px;text-align: center;">Nivel</th>
-                                <th scope="col" style="width: 20px;text-align: center;">Matriculas</th>
-                                <th scope="col" style="width: 40px;text-align: center;"> Session/Modalidad</th>
-                                <th scope="col" style="width: 20px;text-align: center;">Inicio/Fin</th>
-                                <th scope="col" style="width: 20px;text-align: center;">Mat.Reg</th>
-                                <th scope="col" style="width: 20px;text-align: center;">Mat.Ext</th>
-                                <th scope="col" style="width: 20px;text-align: center;">Mat.Esp</th>
-                                <th scope="col" style="width: 200px;text-align: center;"></th>
+                                <th scope="col" style="width: 10px;text-align: center;">Insc
+                                </th>
+                                <th scope="col" style="width: 10px;text-align: center;">Mat.</th>
+                                <th scope="col" style="width: 10px;text-align: center;">Cap</th>
+                                <th scope="col" style="width: 100px;text-align: center;">Aula</th>
+                                <th scope="col" style="width: 20px;text-align: center;"> Hrs.<br>Sem</th>
+                                <th scope="col" style="width: 20px;text-align: center;"> Hrs.<br>Tol</th>
+                                <th scope="col" style="width: 20px;text-align: center;"> Crd.</th>
+                                <th scope="col" style="width: 20px;text-align: center;">Inicio/Fin <br>Asis.</th>
+                                <th scope="col" style="width: 200px;text-align: center;">Profesores</th>
+                                <th scope="col" style="width: 40px;text-align: center;"></th>
                             </tr>
                             </thead>
                             <tbody>
-                            {% for n in niveles %}
+                            {% for dis in distributivos %}
                                 <tr>
+                                    <td>{{ dis.materia }}</td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
+                                    <td></td>
                                     <td>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                            <label class="form-check-label" for="defaultCheck1">
-
-                                            </label>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                            <label class="form-check-label" for="defaultCheck1">
-                                            </label>
-                                        </div>
-                                    </td>
-                                    <td>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
-                                            <label class="form-check-label" for="defaultCheck1">
-                                            </label>
-                                        </div>
-                                    </td>
-                                    <td>{{ n.nombre }}</td>
-                                    <td>??</td>
-                                    <td>{{ n.sesion }} /
-                                        <br> {{ n.modalidad }}
-                                    </td>
-                                    <td>{{ n.fecha_inicio }}
-                                        <br>{{ n.fecha_fin }}
-                                    </td>
-                                    <td>
-                                        {{ n.fecha_matricula }}
-                                    </td>
-                                    <td>
-                                        {{ n.fecha_extraordinaria }}
-                                    </td>
-                                    <td>
-                                        {{ m.fecha_especial }}
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-sm btn-success" href="{% url 'academic:materia' n.pk %}">
-                                            <i class="fa fa-book"></i>Materias
+                                        <br>
+                                        <a class="btn btn-sm btn-success"
+                                           href="{% url 'academic:distributivo-detalle' dis.pk %}">
+                                            <i class="fa fa-plus"></i>Profesor
                                         </a>
+                                    </td>
+                                    <td>
+                                        <div class="btn-group">
+                                            <button id="btn-reportes" type="button"
+                                                    class="btn btn-light dropdown-toggle"
+                                                    data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                                Acciones
+                                            </button>
+                                            <div class="dropdown-menu">
+
+                                            </div>
+                                            <span class="caret"></span>
+                                        </div>
                                     </td>
                                 </tr>
                             {% endfor %}
@@ -183,13 +224,8 @@
                 </div>
             </div>
         </div>
-
-
     </div>
-
 </div>
-
-
 <footer class="footer container-fluid fixed-bottom">
     <div class="flex-row">
         <div class="col">
@@ -208,5 +244,4 @@
     </div>
 </footer>
 </body>
-
 </html>
