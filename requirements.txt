@@ -2,7 +2,7 @@ backports.functools-lru-cache==1.5
 cachetools==2.0.1
 click==6.7
 cycler==0.10.0
-Django==1.11.4
+Django==1.11.28
 django-cors-headers==2.4.0
 Flask==0.12.2
 itsdangerous==0.24
